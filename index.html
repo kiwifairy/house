@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+    <title>你是豪斯医生里的哪个角色？-蓝鲸医生</title>
+    <link rel="stylesheet" href="main.css"/>
+<!--     <script type="text/javascript" src="main.js" ></script>
+    <script src="jquery.min.js"></script>-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- JQUERY -->
+    <script src="jquery.min.js"></script>
+    <!-- SCRIPTS -->
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>测测你是《豪斯医生》里的哪个角色？</h1>
+    <!--  Test -->
+    <form method="post">
+        <ol>
+            <li class="question">你经常碰到麻烦吗？</li>
+            <div class="option">    
+                <input type="radio" id="t11" name="t1" value="h" ><label for="t11">当然不，为什么我会碰到麻烦？</label>
+                <br>
+                <input type="radio" id="t12" name="t1" value="fu"><label for="t12">偶尔吧        </label>
+                <br>
+                <input type="radio" id="t13" name="t1" value="aw"><label for="t13">谁？我吗？（表情无辜） </label>
+                <br>
+                <input type="radio" id="t14" name="t1" value="c"><label for="t14">是的，不过那不是我的错 </label>
+            </div>
+
+            <li class="question">生活…？</li>
+            <div class="option">
+                <input type="radio" id="t21" name="t2" value="h" ><label for="t21">是一道谜题</label>
+                <br>
+                <input type="radio" id="t22" name="t2" value="c"><label for="t22">糟透了         </label>
+                <br>
+                <input type="radio" id="t23" name="t2" value="f"><label for="t23">是一项测验</label>
+                <br>
+                <input type="radio" id="t24" name="t2" value="wua"><label for="t24">仅仅是生活而已</label>
+            </div>
+
+
+            <li class="question">你将要被他人起诉，你的反应是...？</li>
+            <div class="option">
+                <input type="radio" id="t31" name="t3" value="hf" ><label for="t31">不是我的错！</label>
+                <br>
+                <input type="radio" id="t32" name="t3" value="ac"><label for="t32">我不该这样的    </label>       
+                <br>
+                <input type="radio" id="t33" name="t3" value="w"><label for="t33">什么？我？？</label>
+                <br>
+                <input type="radio" id="t34" name="t3" value="u"><label for="t34">又被起诉了？</label>
+            </div>
+
+            <li class="question">你最想要什么新年礼物？</li>
+            <div class="option">
+                <input type="radio" id="t41" name="t4" value="u" ><label for="t41">一个孩子</label>
+                <br>
+                <input type="radio" id="t42" name="t4" value="h"><label for="t42">一把吉他</label>            
+                <br>
+                <input type="radio" id="t43" name="t4" value="f"><label for="t43">升职加薪</label>
+                <br>
+                <input type="radio" id="t44" name="t4" value="awc"><label for="t44">来自某个特别的人的祝福</label>
+            </div>
+
+            <li class="question">你的个人风格是…？</li>
+            <div class="option">
+                <input type="radio" id="t51" name="t5" value="fac" ><label for="t51">整洁、专业</label>
+                <br>
+                <input type="radio" id="t52" name="t5" value="h"><label for="t52">随意的</label>      
+                <br>
+                <input type="radio" id="t53" name="t5" value="w"><label for="t53">漂亮（帅气）的服饰</label>
+                <br>
+                <input type="radio" id="t54" name="t5" value="u"><label for="t54">根据场合决定</label>
+            </div>
+            
+            <li class="question">当你需要告知他人坏消息时，你…？</li>
+            <div class="option">
+                <input type="radio" id="t61" name="t6" value="c" ><label for="t61">尽可能坦诚直白地讲出来</label>
+                <br>
+                <input type="radio" id="t62" name="t6" value="wua"><label for="t62">平静地说出来，让对方得到抚慰 </label>        
+                <br>
+                <input type="radio" id="t63" name="t6" value="f"><label for="t63">陈述事实，不带任何感情色彩</label>
+                <br>
+                <input type="radio" id="t64" name="t6" value="h"><label for="t64">强迫别人去做</label>
+            </div>
+
+            <li class="question">以下哪种是你的习惯或爱好？</li>
+            <div class="option">
+                <input type="radio" id="t71" name="t7" value="acf" ><label for="t71">减肥</label>
+                <br>
+                <input type="radio" id="t72" name="t7" value="h"><label for="t72">阅读</label>           
+                <br>
+                <input type="radio" id="t73" name="t7" value="u"><label for="t73">瑜伽</label>
+                <br>
+                <input type="radio" id="t74" name="t7" value="w"><label for="t74">打猎</label>
+            </div>
+
+            <li class="question">你认为自己的缺点是…？</li>
+            <div class="option">
+                <input type="radio" id="t81" name="t8" value="u" ><label for="t81">我固执己见很少改变</label>
+                <br>
+                <input type="radio" id="t82" name="t8" value="h"><label for="t82">我吗？我没有缺点，毫无问题 </label>     
+                <br>
+                <input type="radio" id="t83" name="t8" value="f"><label for="t83">我是个工作狂</label>
+                <br>
+                <input type="radio" id="t84" name="t8" value="wac"><label for="t84">我太善良了</label>
+            </div>
+
+            <li class="question">你最希望从别人口中听到…？</li>
+            <div class="option">
+                <input type="radio" id="t01" name="t0" value="a" ><label for="t01">你人真是太好了</label>
+                <br>
+                <input type="radio" id="t02" name="t0" value="h"><label for="t02">你是个混球，但你是个厉害的混球</label>           
+                <br>
+                <input type="radio" id="t03" name="t0" value="wc"><label for="t03">你就是我的榜样</label>
+                <br>
+                <input type="radio" id="t04" name="t0" value="fu"><label for="t04">你真聪明</label>
+                <br>
+                <br>
+            </div>        
+        <ol>
+        <input type="submit" value="查看结果"><br>
+    </form> 
+    <!--  Result -->
+    <div class="result">
+        <div class="house">
+            <h1>你是《豪斯医生》里的：<div class="character">豪斯医生 Dr. House</div></h1>
+            <p class="describe">医术高超、态度乖戾的内科医师，认为病人都不值得相信，用自己独特的方式寻找病因。</p>
+            <h3>通过蓝鲸医生助手的【会诊室】功能，House医生可以随时随地和他的小组成员进行会诊，会诊中可以发送图片、音频、文字等信息，并有独创的病历查看模式。</h3>
+            <img src="house.jpg">
+        </div>
+        <div class="cuddy">
+            <h1>你是《豪斯医生》里的：<div class="character">卡蒂医生 Dr. Cuddy</div></h1>
+            <p class="describe">出色的管理能力，坚韧不拔，富有智慧和爱心，不在乎别人的言论。</p>
+            <h3>通过蓝鲸医生助手的【日程安排】功能，Cuddy医生可以管理自己的时间，不会错过任何重要事情，再也不会忙乱得焦头烂额。</h3>
+            <img src="cuddy.jpg">
+        </div>
+
+        <div class="wilson">
+            <h1>你是《豪斯医生》里的：<div class="character">威尔森医生 Dr. Wilson</div></h1>
+            <p class="describe">心思细腻温柔体贴的老好人一個，愿意为了朋友牺牲自己，但感情道路颇有些坎坷。</p>
+            <h3>通过蓝鲸医生助手与患者进行交流，充分关怀指导患者的同时，可以有效分隔工作和私人空间，让Wilson医生工作生活两不误。</h3>
+            <img src="wilson.jpg">
+        </div>
+
+        <div class="foreman">
+            <h1>你是《豪斯医生》里的：<div class="character">福尔曼医生 Dr. Foreman</div></h1>
+            <p class="describe">不服输的个性养成追求完美，沉稳冷静的性格，是一名优秀的医生，除了迷恋权力。</p>
+            <h3>通过蓝鲸医生助手的【患者日记】功能，Foreman医生动动手指就能清楚了解患者生活环境和发病状态，再也不用闯进患者家里寻找致病的蛛丝马迹了。</h3>
+            <img src="foreman.jpg">
+        </div>
+
+        <div class="cameron">
+            <h1>你是《豪斯医生》里的：<div class="character">卡麦容医生 Dr. Cameron</div></h1>
+            <p class="describe">真诚而且感性的医生，同情心泛滥的好人，对生命保持着崇高的神圣感。</p>
+            <h3>通过蓝鲸医生助手的【随访调查】功能，Cameron医生可以快速方便地对患者进行随访调查，系统自动统计结果。数据在手，再也不怕Foreman医生抄袭自己的论文了。</h3>
+            <img src="cameron.jpg">
+        </div>
+        <div class="chase">
+            <h1>你是《豪斯医生》里的：<div class="character">蔡斯医生 Dr. Chase</div></h1>
+            <p class="describe">心思细腻，个性温和，虽经常逆来顺受，却有坚定地抱持着自己的价值观。</p>
+            <h3>通过蓝鲸医生助手的【病历采集】功能，Chase医生可以方便地对收集和整理自己感兴趣的病历，在病历中总结学习和提高。</h3>
+            <img src="chase.jpg">
+        </div>
+        <div class="app">
+            <button id='download'><a href='http://dr.henizaiyiqi.com/Index/download?type=ljyszs' >点击立即下载蓝鲸医生助手APP</a></button>
+        </div>
+    </div>
+
+</body>
+</html>
