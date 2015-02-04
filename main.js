@@ -1,10 +1,7 @@
-//house=h   foreman=f   cuddy=u   cameron=a wilson=w chase=c
-
-//var dict= ["h", "f", "u", "a", "w", "c"];
 var answer=[];
 var count='';
 $(document).ready(function(){
-	$('.house, .foreman, .cuddy, .cameron, .wilson, .chase, .app').hide();
+	$('.house, .foreman, .cuddy, .cameron, .wilson, .chase, .app, .imgShare').hide();
 	$( "form" ).submit(function( event ) {
     answer=[$('input[name=t0]:checked').val(), $('input[name=t1]:checked').val(),
     $('input[name=t2]:checked').val(), $('input[name=t3]:checked').val(), 
@@ -22,28 +19,30 @@ $(document).ready(function(){
 	var result= frequency(count);
 	console.log(result);
 	showChar(result);
+	$('#questions').hide();
+	$("body").animate({ scrollTop: 0 }, "fast");
 	});
 });
 
 var showChar = function(result){
 	switch (result){
 		case 'h':
-			$('.house, .app').show();
+			$('.imgShare, .house, .app').show();
 			break;
 		case 'f':
-			$('.foreman, .app').show();
+			$('.imgShare, .foreman, .app').show();
 			break;
 		case 'u':
-			$('.cuddy, .app').show();
+			$('.imgShare, .cuddy, .app').show();
 			break;
 		case 'a':
-			$('.cameron, .app').show();
+			$('.imgShare, .cameron, .app').show();
 			break;
 		case 'w':
-			$('.wilson, .app').show();
+			$('.imgShare, .wilson, .app').show();
 			break;
 		case 'c':
-			$('.chase, .app').show();
+			$('.imgShare, .chase, .app').show();
 			break;									
 	}
 }
@@ -75,42 +74,29 @@ var frequency = function(string){
 };
 
 
-/*function Test(q,a){
-	this.q=q;
-	this.a=a;
-}
 
-var t1=new Test('你经常碰到麻烦吗？ ',['当然不，为什么我会碰到麻烦？','偶尔吧','谁？我吗？（表情无辜）','是的，不过那不是我的错']);*/
-//var testList=[t1, t2, t3, t4, t5, t6, t7, t8, t9];
-/*var showTest=function(){
-	$('.question').show(t1.q);
-	$('.option').show(t1.a1);
-};*/
-//$(document).ready(  function(){
+//微信分享
 
-/*$('.next').click(clickAction);
-
-var clickAction= function(){
-
+var shareMeta = {
+	img_url: "http://weina.me/randomLuck/logo.jpg",
+	image_width: 100,
+	image_height: 100,
+	link: 'http://weina.me/randomLuck/index.html',
+	title: "我的羊年患者运是?",
+	desc: "试试我最可能遇到哪种任性患者",
+	appid: ""
 };
-
-*/
-/*$('.question').html(t1.q);
-for (var i=0; i<4; i++){
-	$('.form').append('<li>'+t1.a[i]+'</li>');
-};
-
-$(document).ready(function() {
-
-	$('h1').click(function(){
-		counter['house']+=1;
+document.addEventListener('WeixinJSBridgeReady', function () {
+	WeixinJSBridge.on('menu:share:appmessage', function(){
+		WeixinJSBridge.invoke('sendAppMessage', shareMeta);
 	});
-	console.log(counter['house']);
-});*/
-/*$('li:first-child').html(t1.a1);
-$('ol:nth-child(2)').html(t1.a2);
-$('ol:nth-child(3)').html(t1.a3);
-$('ol:last-child').html(t1.a4);*/
-
-//$('ol: first-child').append('<p>'+t1.a1+'</p>');
-//});
+	WeixinJSBridge.on('menu:share:timeline', function(){
+		WeixinJSBridge.invoke('shareTimeline', shareMeta);
+	});
+	WeixinJSBridge.on('menu:share:weibo', function(){
+		WeixinJSBridge.invoke('shareWeibo', {
+			content: shareMeta.title + shareMeta.desc,
+			url: shareMeta.link
+		});
+	});
+});
