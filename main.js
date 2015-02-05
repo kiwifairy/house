@@ -3,11 +3,10 @@ var count='';
 $(document).ready(function(){
 	$('.house, .foreman, .cuddy, .cameron, .wilson, .chase, .app, .imgShare').hide();
 	$( "form" ).submit(function( event ) {
-    answer=[$('input[name=t0]:checked').val(), $('input[name=t1]:checked').val(),
+    answer=[$('input[name=t0]:checked').val(), 
     $('input[name=t2]:checked').val(), $('input[name=t3]:checked').val(), 
     $('input[name=t4]:checked').val(), $('input[name=t5]:checked').val(), 
-    $('input[name=t6]:checked').val(), $('input[name=t7]:checked').val(), 
-    $('input[name=t8]:checked').val()];
+    $('input[name=t6]:checked').val()];
     event.preventDefault();
     for (var i=0; i<answer.length; i++)
     {
@@ -21,28 +20,32 @@ $(document).ready(function(){
 	showChar(result);
 	$('#questions').hide();
 	$("body").animate({ scrollTop: 0 }, "fast");
+	if(req.headers['user-agent'].indexOf('MicroMessenger') !== -1){
+	  //we are in wechat browser
+	    $('.imgShare').show();
+	}
 	});
 });
 
 var showChar = function(result){
 	switch (result){
 		case 'h':
-			$('.imgShare, .house, .app').show();
+			$('.house, .app').show();
 			break;
 		case 'f':
-			$('.imgShare, .foreman, .app').show();
+			$('.foreman, .app').show();
 			break;
 		case 'u':
-			$('.imgShare, .cuddy, .app').show();
+			$('.cuddy, .app').show();
 			break;
 		case 'a':
-			$('.imgShare, .cameron, .app').show();
+			$('.cameron, .app').show();
 			break;
 		case 'w':
-			$('.imgShare, .wilson, .app').show();
+			$('.wilson, .app').show();
 			break;
 		case 'c':
-			$('.imgShare, .chase, .app').show();
+			$('.chase, .app').show();
 			break;									
 	}
 }
@@ -76,16 +79,75 @@ var frequency = function(string){
 
 
 //微信分享
+switch (result){
+	case 'h':
+		var shareMeta = {
+			img_url: "house.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. House，快来测下你最像哪个角色吧！",
+			appid: ""
+		};
+		break;
+	case 'f':
+		var shareMeta = {
+			img_url: "foreman.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. Foreman，快来测下你最像哪个角色吧！",
+			appid: ""
+		};
+		break;
+	case 'u':
+		var shareMeta = {
+			img_url: "cuddy.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. Cuddy，快来测下你最像哪个角色吧！",
+			appid: ""
+		};
+		break;
+	case 'a':
+		var shareMeta = {
+			img_url: "cameron.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. Cameron，快来测下你最像哪个角色吧！",
+			appid: ""
+		}; 
+ 		break;
+	case 'w':
+		var shareMeta = {
+			img_url: "wilson.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. Wilson，快来测下你最像哪个角色吧！",
+			appid: ""
+		}; 
+ 		break;
+	case 'c':
+		var shareMeta = {
+			img_url: "chase.jpg",
+			image_width: 100,
+			image_height: 100,
+			link: 'index.html',
+			title: "测测你是《豪斯医生》里的哪个角色？",
+			desc: "我最像《豪斯医生》里的Dr. Chase，快来测下你最像哪个角色吧！",
+			appid: ""
+		}; 
+ 		break;									
+}
 
-var shareMeta = {
-	img_url: "http://weina.me/randomLuck/logo.jpg",
-	image_width: 100,
-	image_height: 100,
-	link: 'http://weina.me/randomLuck/index.html',
-	title: "我的羊年患者运是?",
-	desc: "试试我最可能遇到哪种任性患者",
-	appid: ""
-};
 document.addEventListener('WeixinJSBridgeReady', function () {
 	WeixinJSBridge.on('menu:share:appmessage', function(){
 		WeixinJSBridge.invoke('sendAppMessage', shareMeta);
