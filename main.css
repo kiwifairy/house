@@ -12,25 +12,36 @@ h1{
 
 h3{
 	font-size: 1.2em;
-	text-align: center;
+	max-width: 600px;
+	width: 80%;
+    margin-right:auto;
+    margin-left:auto;
 }
 p{
 	font-size: 0.9em;
-	text-align: center;
+	max-width: 600px;
+	width: 80%;
+    margin-right:auto;
+    margin-left:auto;
+    color: #0274B8;
 
 }
 .question{
 	font-size: 1.2em;
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 10px;
 	color: #006F99;
+	position: relative;
+	left: 0;
 }
 
 .option{
 	padding: 10px;
-	background-color: rgba(113, 206, 241,0.8);
+	background-color: rgba(113, 206, 241,0.2);
 	border-radius: 6px;
 	width: 100%;
+	position: relative;
+	margin-left:-15px;
 }
 
 .tt{
@@ -42,10 +53,11 @@ p{
 	width: 80%;
     margin-right:auto;
     margin-left:auto;
+   	position:relative;
 }
 
-ol, .result{
-
+ol {
+	margin-left: -30px;
 }
 
 .checkResult{
@@ -74,6 +86,7 @@ a, a:hover {
 #again{
 	text-align: center;
 	border: 1px dotted #55BDFA;
+	border-radius: 5px;
 	width: 80px;
 	padding: 2px;
 }
@@ -97,23 +110,30 @@ img{
     padding-bottom: 10px;
 }
 
-.imgShare img{
-	display: inline;
+#housepoint{
+	display: none;
 	width:100%;
-	height: 100%; 
-	overflow: auto;
 }
 
 #downloadIcon{
 	max-width: 300px;
+	position:relative;
+	width: 80%;
+    margin-right:auto;
+    margin-left:auto;
 }
 #downloadIcon img{
+	position:absolute; 
+	bottom:0;
+	left: 5px;
 	display: inline;
 	padding-bottom: 0px;
-	width: 20px;
-	height: 20px;
+	width: 35px;
+	height: 35px;
 }
 
+/*background img*/
 #questions img{
 	max-width: 90%;
 }
+
